@@ -1,0 +1,53 @@
+<?php
+
+namespace Src;
+
+use Src\Interfaces\StackIF;
+
+class Queue implements StackIF
+{
+    protected $size;
+    protected $queue;
+
+    public function __construct()
+    {
+        $this->size = 0;
+        $this->queue = [];
+    }
+
+    public function getTop()
+    {
+        return $this->queue[0][0];
+    }
+
+
+    public function push($element)
+    {
+        array_push($this->queue, array($element));
+        $this->size++;
+    }
+
+
+    public function pop()
+    {
+        unset($this->queue[0]);
+        $this->size--;
+    }
+
+    public function getQueue()
+    {   
+       for($i=0; $i < $this->size; $i++) {
+
+            echo $this->queue[$i][0]. PHP_EOL;
+    
+        }
+    }
+
+    public function isEmpty() : bool
+    {
+        if ($this->size === 0) {
+            return true;
+        } 
+        return false;
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "ivan.portillo/estructura_datos_php",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "require": {}
+}
